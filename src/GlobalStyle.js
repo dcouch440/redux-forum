@@ -5,8 +5,12 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		--nav-height: 50px;
 		--page-height: calc(100% - --nav-height);
+
+		--max-px-width: 1200px;
 		--max-page-width: 90%;
+
 		--mid-page-width: 95%;
+
 		--sml-page-width: 98%;
 	}
 	* {
@@ -33,9 +37,9 @@ const GlobalPageSetup = styled.div`
 	height: var(--page-height);
 	margin: 0 auto;
 
-	@media (max-width: 1200px) { width: var(--max-page-width) }
-	@media (max-width: 1000px) { width: var(--mid-page-width) }
-	@media (max-width: 800px)  { width: var(--sml-page-width) }
+	@media (max-width: var(--max-px-width)) { width: var(--max-page-width); }
+	@media (max-width: 1000px) { width: var(--mid-page-width); }
+	@media (max-width: 800px)  { width: var(--sml-page-width); }
 
 `
 

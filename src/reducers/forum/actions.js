@@ -1,3 +1,2 @@
-import { v4 } from "uuid";
-
-export const postAdded = payload => ({ type: 'ADD_POST', payload: { id: v4(), ...payload } });
+export const postAdded = payload => ({ type: 'ADD_POST', ...payload });
+export const postDeleted = payload => ({ type: 'REMOVE_POST', ...payload });

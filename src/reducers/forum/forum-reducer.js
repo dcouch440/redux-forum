@@ -1,10 +1,19 @@
 /* eslint-disable import/no-anonymous-default-export */
-export default (state = {}, action) => {
-  switch(action.type)
+import initial from './initial';
+
+export default (state = initial, action) => {
+  const { id, type, ...payload } = action;
+
+  const switchObject =
   {
-    case 'ADD_POST':
-      return {...state, ...{[action.payload.id]:{...action.payload}}};
-    default:
-      return state;
-  }
+    ADD_POST: () => ({ ...state, ...{ [id] : {...payload, id} } }),
+    REMOVE_POST: () => {
+      const prev = {...state};
+      delete prev[id];
+      return prev;
+    },
+    DEFAULT: () => state
+  };
+
+  return (switchObject[type] || switchObject['DEFAULT'])()
 }
