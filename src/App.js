@@ -1,12 +1,19 @@
-import GlobalStyle from './GlobalStyle';
+import {GlobalStyle, GlobalPageSetup} from './GlobalStyle';
 import Home from './pages/HomePage';
-
+import NavBar from './nav/NavBar';
+import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <>
       <GlobalStyle  />
-      <Home />
+      <NavBar />
+
+      <GlobalPageSetup>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </GlobalPageSetup>
     </>
   );
 }

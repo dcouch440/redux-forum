@@ -3,19 +3,23 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducer from './reducers';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import reducer from './reducers';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(reducer);
+// const store = createStore(reducer);
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState());
+// });
 
 ReactDOM.render(
-  <Provider store={store}>
+  // <Provider store={store}>
+  <Router>
     <App />
-  </Provider>,
+  </Router>
+  // </Provider>,
+  ,
   document.getElementById('root')
 );
 
