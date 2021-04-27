@@ -1,3 +1,20 @@
+# REDUX FORUM
+
+### Created BY David Couch & Jo Miller
+
+### Created At 4/17/2021
+
+#### A Site For Forum Post Made Through Redux
+
+### About
+This is a application made to test and further explore the functionality of redux. This application might be un finished and does not represent the professional work of my classmates or myself.
+
+
+# Tech Used
+
+* React
+* Redux
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
