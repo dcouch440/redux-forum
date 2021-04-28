@@ -1,10 +1,13 @@
 import React from 'react';
+import Posts from './Posts';
+import Title from './Title';
 
 const Home = () => {
   return (
-    <div>
-      lol
-    </div>
+    <>
+      <Title />
+      <Posts />
+    </>
   )
 }
 

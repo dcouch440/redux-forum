@@ -6,14 +6,14 @@ import { createStore } from 'redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import reducer from './reducers/combine-reducers';
 import reportWebVitals from './reportWebVitals';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 const store = createStore(reducer);
 
 store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch({type: 'ADD_POST', ...{id: 5, title: 'cats', body: 'sdfsdfsdf'}})
+// store.dispatch({type: 'ADD_POST', ...{id: 5, title: 'cats', body: 'sdfsdfsdf'}})
 
 ReactDOM.render(
   <Provider store={store}>

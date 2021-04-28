@@ -9,9 +9,9 @@ const NavBar = () => {
         Dogs Corner
       </Logo>
       <NavLinks>
-        <Link to="/">Hello World</Link>
-        <Link to="/">Hello World</Link>
-        <Link to="/">Hello World</Link>
+        <Link to="/">FORUM</Link>
+        <Link to="/new">NEW POST</Link>
+        <Link to="/234234234234">DOGS SECRET</Link>
       </NavLinks>
     </Nav>
   )
