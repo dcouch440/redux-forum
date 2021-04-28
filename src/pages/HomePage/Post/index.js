@@ -1,17 +1,20 @@
 import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import {CardStyles, ButtonContainer, Score} from './styles';
+import { connect } from 'react-redux';
+import * as actions from '../../../reducers/forum/actions';
 
 const Post = props => {
-  console.log(props);
+  const { dispatch } = props;
+
   return (
     <CardStyles as={Card}>
       <Card.Header>
         {props.post.title}
         <ButtonContainer>
-          <Score>5</Score>
-          <Button>+</Button>
-          <Button>-</Button>
+          <Score>{props.post.likes}</Score>
+          <Button onClick = {() => dispatch(actions.postLiked(props.post)) }>+</Button>
+          <Button onClick = {() => dispatch(actions.postUnliked(props.post)) }>-</Button>
         </ButtonContainer>
       </Card.Header>
       <Card.Body>
@@ -21,4 +24,4 @@ const Post = props => {
   );
 }
 
-export default Post;
+export default connect(state => state)(Post);
